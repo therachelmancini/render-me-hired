@@ -1,5 +1,7 @@
 import Image from "next/image";
-import NavBar from "../components/organisms/NavBar";
+import Link from "next/link";
+import NavBar from "@/components/organisms/navbar";
+import Button from "@/components/atoms/button";
 
 export default function Home() {
   return (
@@ -16,12 +18,19 @@ export default function Home() {
         <header className="text-center">
           <h1 className="text-xl font-bold mb-2">Rachel Mancini</h1>
           <h2 className="text-lg mb-4">Software Engineer</h2>
-          <p className="text-sm mb-2">
-            Welcome to my personal homepage.
-          </p>
+          <div className="flex gap-4">
+            <Link href="https://www.linkedin.com/in/therachelmancini" passHref>
+              <Button label="LinkedIn" className="bg-blue-700 hover:bg-blue-800" />
+            </Link>
+            <Link href="https://github.com/therachelmancini" passHref>
+              <Button label="GitHub" className="bg-gray-700 hover:bg-gray-800" />
+            </Link>
+            <Link href="https://www.hackerrank.com/profile/rachel_mancini92" passHref>
+              <Button label="HackerRank" className="bg-green-700 hover:bg-green-800" />
+            </Link>
+          </div>
         </header>
-        </main>
-      {/* </footer> */}
+      </main>
     </div>
   );
 }
