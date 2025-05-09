@@ -19,12 +19,12 @@ const navLinks: NavLink[] = [
 const NavBar: React.FC = () => {
   return (
     <nav
-    className="bg-gray-900 h-full fixed top-0 left-0 w-32 flex flex-col items-center py-6">
-      <div className="text-white text-center mb-6">
+    className="h-full fixed top-0 left-0 w-32 flex flex-col items-center py-6 border-r border-white">
+      <h1 className="text-white text-center mb-6">
         <Link href="/"></Link>
         <span className="text-2xl font-bold">RM</span>
-      </div>
-      <ul className="flex flex-col space-y-8">
+      </h1>
+      <ul className="flex flex-col space-y-10 mt-6">
         {navLinks.map((link, index) => (
           <li key={index} className="text-white">
             <Link

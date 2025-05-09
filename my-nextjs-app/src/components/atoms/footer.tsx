@@ -8,7 +8,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ links, copyright }) => {
   return (
-    <footer className="bg-gray-800 text-white py-6 mt-10">
+    <footer className="bg-black w-full bottom-0 fixed text-white py-6 mt-10 border-t border-white">
       <div className="container mx-auto flex justify-between items-center flex-wrap">
         <div>
           {links && (
@@ -20,9 +20,10 @@ const Footer: React.FC<FooterProps> = ({ links, copyright }) => {
               ))}
             </nav>
           )}
+        🧠 Powered by caffeine & curiosity <br />📍 Based in Virginia, coding from the woods
         </div>
         <div className="text-sm text-gray-400 mt-4 md:mt-0">
-          {copyright || "© 2025 Rachel Mancini | Software Engineer"}
+          {copyright || "© 2025 Rachel Mancini. All rights reserved."}
         </div>
       </div>
     </footer>
