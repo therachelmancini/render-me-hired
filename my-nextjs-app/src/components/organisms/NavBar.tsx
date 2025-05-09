@@ -19,11 +19,7 @@ const navLinks: NavLink[] = [
 const NavBar: React.FC = () => {
   return (
     <nav
-      style={{
-        background:
-          "linear-gradient(to bottom, rgba(0, 208, 208, 0.36), rgb(33, 32, 32))",
-      }}
-      className="h-full fixed top-0 left-0 w-32 flex flex-col items-center py-6">
+    className="bg-gray-900 h-full fixed top-0 left-0 w-32 flex flex-col items-center py-6">
       <div className="text-white text-center mb-6">
         <Link href="/"></Link>
         <span className="text-2xl font-bold">RM</span>
