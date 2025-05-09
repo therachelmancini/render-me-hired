@@ -1,37 +1,45 @@
 import React from "react";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHome,
+  faUser,
+  faTools,
+  faBriefcase,
+  faChartBar,
+  faGraduationCap,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
+import Button from "../atoms/button";
 
-interface NavLink {
-  label: string;
-  href: string;
-}
-
-const navLinks: NavLink[] = [
-  { label: "Home", href: "/" },
-  { label: "About Me", href: "/about" },
-  { label: "Skills", href: "/skills" },
-  { label: "Projects", href: "/projects" },
-  { label: "Experience", href: "/experience" },
-  { label: "Education", href: "/education" },
-  { label: "Contact", href: "/contact" },
+const navLinks = [
+  { icon: faHome, href: "/" },
+  { icon: faUser, href: "/about" },
+  { icon: faTools, href: "/skills" },
+  { icon: faBriefcase, href: "/projects" },
+  { icon: faChartBar, href: "/experience" },
+  { icon: faGraduationCap, href: "/education" },
+  { icon: faEnvelope, href: "/contact" },
 ];
 
 const NavBar: React.FC = () => {
   return (
-    <nav
-    className="h-full fixed top-0 left-0 w-32 flex flex-col items-center py-6 border-r border-white">
+    <nav className="h-full fixed top-0 left-0 w-24 flex flex-col items-center py-9 border-r border-white">
       <h1 className="text-white text-center mb-6">
-        <Link href="/"></Link>
-        <span className="text-2xl font-bold">RM</span>
+        <Link href="/">
+          <span className="text-2xl font-bold">RM</span>
+        </Link>
       </h1>
-      <ul className="flex flex-col space-y-10 mt-6">
+      <ul className="flex flex-col space-y-10 mt-10">
         {navLinks.map((link, index) => (
           <li key={index} className="text-white">
             <Link
               href={link.href}
-              className="hover:text-gray-400 block text-right"
+              className="hover:text-gray-400 flex justify-end"
             >
-              {link.label}
+              <Button  className="bg-teal-500 w-16 h-16">
+                <FontAwesomeIcon icon={link.icon} size="lg" />
+              </Button>
             </Link>
           </li>
         ))}
